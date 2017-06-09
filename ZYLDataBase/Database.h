@@ -41,4 +41,6 @@ typedef NS_ENUM(NSInteger, TransactionCompletion) {
 - (NSArray *)columnsForTableName:(NSString *)tableName;
 - (NSUInteger)lastInsertRowId;
 
++ (void)secureEntry:(BOOL)enable;
+
 @end

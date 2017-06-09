@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZYLDataBase'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'ORM机制的sqlite数据库.'
 
 # This description is used to generate tags and improve search results.
@@ -40,6 +40,6 @@ Pod::Spec.new do |s|
   s.vendored_libraries = 'ZYLDataBase/**/*.a'
   s.libraries = 'z', 'sqlite3'
 
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'Security'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

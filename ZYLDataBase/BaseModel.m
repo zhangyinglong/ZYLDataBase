@@ -80,12 +80,12 @@ static NSMutableDictionary *tableCache = nil;
     self.limit = @"";
 }
 
-- (BaseModel*)table:(NSString *)table {
+- (BaseModel *)table:(NSString *)table {
     self.table = table;
     return self;
 }
 
-- (BaseModel*)field:(id)field {
+- (BaseModel *)field:(id)field {
     if ([field isKindOfClass:[NSString class]]){
         self.field = field;
     }else if([field isKindOfClass:[NSArray class]]){
@@ -96,12 +96,12 @@ static NSMutableDictionary *tableCache = nil;
     return self;
 }
 
-- (BaseModel*)limit:(NSUInteger)start size:(NSUInteger)size {
+- (BaseModel *)limit:(NSUInteger)start size:(NSUInteger)size {
     self.limit = [NSString stringWithFormat:@" LIMIT %lu,%lu",(unsigned long)start,(unsigned long)size];
     return self;
 }
 
-- (BaseModel*)order:(NSString *)order {
+- (BaseModel *)order:(NSString *)order {
     self.order = [NSString stringWithFormat:@" ORDER BY %@",order];
     return self;
 }
@@ -111,13 +111,13 @@ static NSMutableDictionary *tableCache = nil;
     return self;
 }
 
-- (BaseModel*)whereRaw:(NSString *)str value:(NSDictionary *)map {
-    self.where = [NSMutableString stringWithFormat:@" WHERE %@",str];
+- (BaseModel *)whereRaw:(NSString *)str value:(NSDictionary *)map {
+    self.where = [NSMutableString stringWithFormat:@" WHERE %@ = ?",str];
     self.map = [NSMutableArray arrayWithArray:[map allValues]];
     return self;
 }
 
-- (BaseModel*)setwhere:(NSDictionary *)map {
+- (BaseModel *)setwhere:(NSDictionary *)map {
     NSMutableString *where = [NSMutableString string];
     if(map != nil){
         [where appendString:@" WHERE 1"];
@@ -228,10 +228,25 @@ static NSMutableDictionary *tableCache = nil;
 #pragma mark - ActiveRecord-like Methods
 
 - (void)createTable {
-    if(!self.isTableExist){
+    if (!self.isTableExist) {
         NSArray *propertyList = [self getPropertyList];
         NSString *sql = [NSString stringWithFormat:@"CREATE TABLE %@ (primaryKey integer primary key autoincrement, %@)", [[self class] tableName], [propertyList componentsJoinedByString:@","]];
         [database executeSql:sql];
+    }
+}
+
+- (void)alterTable {
+    if (self.isTableExist) {
+        NSMutableSet *oldColumns = [NSMutableSet setWithArray:[self columnsWithoutPrimaryKey]];
+        NSMutableSet *newColumns = [NSMutableSet setWithArray:[self getPropertyListName]];
+        if (newColumns.count > oldColumns.count) {
+            [newColumns minusSet:oldColumns];
+            NSArray *propertyList = [self getPropertyListWithNames:newColumns.allObjects];
+            [propertyList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                NSString *sql = [NSString stringWithFormat:@"ALTER TABLE %@ ADD COLUMN %@", [[self class] tableName], obj];
+                [database executeSql:sql];
+            }];
+        }
     }
 }
 
@@ -316,6 +331,38 @@ static NSMutableDictionary *tableCache = nil;
         if ( type ) { free(type); }
         return DBText;
     }
+}
+
+- (NSArray *)getPropertyListName {
+    NSMutableArray *propertyNamesArray = [NSMutableArray array];
+    unsigned int propertyCount = 0;
+    objc_property_t *properties = class_copyPropertyList(self.class, &propertyCount);
+    for (unsigned int i = 0; i < propertyCount; ++i) {
+        objc_property_t property = properties[i];
+        const char * name = property_getName(property);
+        [propertyNamesArray addObject:[NSString stringWithUTF8String:name]];
+    }
+    free(properties);
+    return propertyNamesArray;
+}
+
+- (NSArray *)getPropertyListWithNames:(NSArray *)names {
+    NSMutableArray *propertyNamesArray = [NSMutableArray array];
+    unsigned int propertyCount = 0;
+    objc_property_t *properties = class_copyPropertyList(self.class, &propertyCount);
+    for (unsigned int i = 0; i < propertyCount; ++i) {
+        objc_property_t property = properties[i];
+        const char * name = property_getName(property);
+        if ( [names containsObject:[NSString stringWithUTF8String:name]] ) {
+            NSString * attributes = [self dbTypeConvertFromObjc_property_t:property];
+            if(![attributes isEqualToString:DBObject] && ![attributes isEqualToString:DBArray]
+               ){
+                [propertyNamesArray addObject:[NSString stringWithFormat:@"%@ %@",[NSString stringWithUTF8String:name],attributes]];
+            }
+        }
+    }
+    free(properties);
+    return propertyNamesArray;
 }
 
 - (NSArray *)getPropertyList {
@@ -446,6 +493,10 @@ static NSMutableDictionary *tableCache = nil;
 
 + (NSArray *)findAll {
     return [self findWithSql:[NSString stringWithFormat:@"SELECT * FROM %@", [self tableName]]];
+}
+
++ (void)updateAll {
+    [[[self class] alloc] alterTable];
 }
 
 /*

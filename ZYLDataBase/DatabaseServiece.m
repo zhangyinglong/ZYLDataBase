@@ -14,9 +14,6 @@
 
 @interface DatabaseServiece ()
 
-// Migration steps - v1
--(void)createApplicationPropertiesTable;
-
 @end
 
 @implementation DatabaseServiece

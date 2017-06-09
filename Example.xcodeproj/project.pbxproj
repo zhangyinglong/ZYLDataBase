@@ -22,10 +22,10 @@
 		FC4F2B201EDFC7BA0010FA26 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4F2B1A1EDFC7BA0010FA26 /* Database.m */; };
 		FC4F2B211EDFC7BA0010FA26 /* DatabaseServiece.h in Headers */ = {isa = PBXBuildFile; fileRef = FC4F2B1B1EDFC7BA0010FA26 /* DatabaseServiece.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FC4F2B221EDFC7BA0010FA26 /* DatabaseServiece.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4F2B1C1EDFC7BA0010FA26 /* DatabaseServiece.m */; };
-		FC4F2B271EDFC7C60010FA26 /* libcrypto-sqlcipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC4F2B241EDFC7C60010FA26 /* libcrypto-sqlcipher.a */; };
 		FC4F2B281EDFC7C60010FA26 /* libsqlcipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC4F2B251EDFC7C60010FA26 /* libsqlcipher.a */; };
-		FC4F2B291EDFC7C60010FA26 /* libssl-sqlcipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC4F2B261EDFC7C60010FA26 /* libssl-sqlcipher.a */; };
 		FC4F2B361EDFCB1B0010FA26 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4F2B351EDFCB1B0010FA26 /* User.m */; };
+		FC5284A81EE7B6C300407C3A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5284A71EE7B6C300407C3A /* Security.framework */; };
+		FC5284AC1EE7C83F00407C3A /* DBServiece.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5284AB1EE7C83F00407C3A /* DBServiece.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,12 +72,14 @@
 		FC4F2B1A1EDFC7BA0010FA26 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
 		FC4F2B1B1EDFC7BA0010FA26 /* DatabaseServiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseServiece.h; sourceTree = "<group>"; };
 		FC4F2B1C1EDFC7BA0010FA26 /* DatabaseServiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseServiece.m; sourceTree = "<group>"; };
-		FC4F2B241EDFC7C60010FA26 /* libcrypto-sqlcipher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libcrypto-sqlcipher.a"; sourceTree = "<group>"; };
 		FC4F2B251EDFC7C60010FA26 /* libsqlcipher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsqlcipher.a; sourceTree = "<group>"; };
-		FC4F2B261EDFC7C60010FA26 /* libssl-sqlcipher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libssl-sqlcipher.a"; sourceTree = "<group>"; };
 		FC4F2B2E1EDFC97E0010FA26 /* ZYLDataBase.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ZYLDataBase.podspec; sourceTree = "<group>"; };
 		FC4F2B341EDFCB1B0010FA26 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		FC4F2B351EDFCB1B0010FA26 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		FC5284A71EE7B6C300407C3A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FC5284A91EE7B92200407C3A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FC5284AA1EE7C83F00407C3A /* DBServiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBServiece.h; sourceTree = "<group>"; };
+		FC5284AB1EE7C83F00407C3A /* DBServiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBServiece.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC4F2B271EDFC7C60010FA26 /* libcrypto-sqlcipher.a in Frameworks */,
-				FC4F2B291EDFC7C60010FA26 /* libssl-sqlcipher.a in Frameworks */,
+				FC5284A81EE7B6C300407C3A /* Security.framework in Frameworks */,
 				FC4F2B281EDFC7C60010FA26 /* libsqlcipher.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,9 +107,11 @@
 			isa = PBXGroup;
 			children = (
 				FC4F2B2E1EDFC97E0010FA26 /* ZYLDataBase.podspec */,
+				FC5284A91EE7B92200407C3A /* README.md */,
 				FC4F2AED1EDFC6BF0010FA26 /* Example */,
 				FC4F2B0B1EDFC6F70010FA26 /* ZYLDataBase */,
 				FC4F2AEC1EDFC6BF0010FA26 /* Products */,
+				FC5284A61EE7B6C300407C3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,9 +168,7 @@
 		FC4F2B231EDFC7C60010FA26 /* Sqlcipher */ = {
 			isa = PBXGroup;
 			children = (
-				FC4F2B241EDFC7C60010FA26 /* libcrypto-sqlcipher.a */,
 				FC4F2B251EDFC7C60010FA26 /* libsqlcipher.a */,
-				FC4F2B261EDFC7C60010FA26 /* libssl-sqlcipher.a */,
 			);
 			path = Sqlcipher;
 			sourceTree = "<group>";
@@ -177,8 +178,18 @@
 			children = (
 				FC4F2B341EDFCB1B0010FA26 /* User.h */,
 				FC4F2B351EDFCB1B0010FA26 /* User.m */,
+				FC5284AA1EE7C83F00407C3A /* DBServiece.h */,
+				FC5284AB1EE7C83F00407C3A /* DBServiece.m */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		FC5284A61EE7B6C300407C3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC5284A71EE7B6C300407C3A /* Security.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC5284AC1EE7C83F00407C3A /* DBServiece.m in Sources */,
 				FC4F2B361EDFCB1B0010FA26 /* User.m in Sources */,
 				FC4F2AF61EDFC6BF0010FA26 /* ViewController.m in Sources */,
 				FC4F2AF31EDFC6BF0010FA26 /* AppDelegate.m in Sources */,

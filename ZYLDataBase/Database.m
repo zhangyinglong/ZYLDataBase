@@ -8,7 +8,7 @@
 
 #import "Database.h"
 
-#define ENABLE_SQLLITE_ENCRYPT
+static BOOL _secureEntry_ = YES;
 
 @interface Database ()
 
@@ -26,6 +26,10 @@
 @end
 
 @implementation Database
+
++ (void)secureEntry:(BOOL)enable {
+    _secureEntry_ = enable;
+}
 
 #pragma mark - Init Methods
 
@@ -162,62 +166,52 @@
 
 #pragma mark - Private Methods
 
-#ifdef ENABLE_SQLLITE_ENCRYPT
-
 -(void)open {
     NSLog(@"sqlite3 lib version: %s", sqlite3_libversion());
-
+    
     dispatch_sync(self.databaseQueue, ^{
-        if (sqlite3_threadsafe() > 0) {
-            int retCode = sqlite3_config(SQLITE_CONFIG_SERIALIZED);
-            if (retCode == SQLITE_OK) {
-                NSLog(@"Can now use sqlite on multiple threads, using the same connection");
+        if ( _secureEntry_ ) {
+            if (sqlite3_threadsafe() > 0) {
+                int retCode = sqlite3_config(SQLITE_CONFIG_SERIALIZED);
+                if (retCode == SQLITE_OK) {
+                    NSLog(@"Can now use sqlite on multiple threads, using the same connection");
+                } else {
+                    NSLog(@"setting sqlite thread safe mode to serialized failed!!! return code: %d", retCode);
+                }
             } else {
-                NSLog(@"setting sqlite thread safe mode to serialized failed!!! return code: %d", retCode);
+                NSLog(@"Your SQLite database is not compiled to be threadsafe.");
             }
-        } else {
-            NSLog(@"Your SQLite database is not compiled to be threadsafe.");
-        }
-
-        // opens database, creating the file if it does not already exist
-        if (sqlite3_open([self.pathToDatabase UTF8String], &database) == SQLITE_OK) {
-            const char* key = [@"WWW.04401.COM.CN" UTF8String];
-            sqlite3_key(database, key, (int)strlen(key));
-            if (sqlite3_exec(database, (const char*) "SELECT count(*) FROM sqlite_master;", NULL, NULL, NULL) == SQLITE_OK) {
-                NSLog(@"password is correct, or, database has been initialized!");
+            
+            // opens database, creating the file if it does not already exist
+            if (sqlite3_open([self.pathToDatabase UTF8String], &database) == SQLITE_OK) {
+                const char* key = [@"WWW.04401.COM.CN" UTF8String];
+                sqlite3_key(database, key, (int)strlen(key));
+                if (sqlite3_exec(database, (const char*) "SELECT count(*) FROM sqlite_master;", NULL, NULL, NULL) == SQLITE_OK) {
+                    NSLog(@"password is correct, or, database has been initialized!");
+                } else {
+                    NSLog(@"incorrect password!");
+                    sqlite3_close(database);
+                }
             } else {
-                NSLog(@"incorrect password!");
+                NSLog(@"Failed to open database");
                 sqlite3_close(database);
             }
         } else {
-            NSLog(@"Failed to open database");
-            sqlite3_close(database);
+            // config sqlite to work with the same connection on multiple threads
+            if (sqlite3_config(SQLITE_CONFIG_SERIALIZED) == SQLITE_OK) {
+                NSLog(@"Can now use sqlite on multiple threads, using the same connection");
+            } else {
+                NSLog(@"UNABLE to use sqlite on multiple threads, using the same connection");
+            }
+            
+            // opens database, creating the file if it does not already exist
+            if (sqlite3_open([self.pathToDatabase UTF8String], &database) != SQLITE_OK) {
+                sqlite3_close(database);
+                [self raiseSqliteException:@"Failed to open database with message '%S'."];
+            }
         }
     });
 }
-
-#else
-
-- (void)open {
-    NSLog(@"sqlite3 lib version: %s", sqlite3_libversion());
-
-    dispatch_sync(self.databaseQueue, ^{
-        // config sqlite to work with the same connection on multiple threads
-        if (sqlite3_config(SQLITE_CONFIG_SERIALIZED) == SQLITE_OK) {
-            NSLog(@"Can now use sqlite on multiple threads, using the same connection");
-        } else {
-            NSLog(@"UNABLE to use sqlite on multiple threads, using the same connection");
-        }
-
-        // opens database, creating the file if it does not already exist
-        if (sqlite3_open([self.pathToDatabase UTF8String], &database) != SQLITE_OK) {
-            sqlite3_close(database);
-            [self raiseSqliteException:@"Failed to open database with message '%S'."];
-        }
-    });
-}
-
-#endif
 
 - (void)raiseSqliteException:(NSString *)errorMessage {
     [NSException raise:@"DatabaseSQLiteException" format:errorMessage, sqlite3_errmsg16(database)];

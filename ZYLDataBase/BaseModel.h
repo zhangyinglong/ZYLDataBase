@@ -21,13 +21,13 @@
 + (Database *)database;
 
 - (void)resetAll;
-- (BaseModel*)table:(NSString *)table;
-- (BaseModel*)field:(id)field;
-- (BaseModel*)limit:(NSUInteger)start size:(NSUInteger)size;
-- (BaseModel*)order:(NSString *)order;
-- (BaseModel*)group:(NSString *)group;
-- (BaseModel*)whereRaw:(NSString *)str value:(NSDictionary *)map;
-- (BaseModel*)setwhere:(NSDictionary *)map;
+- (BaseModel *)table:(NSString *)table;
+- (BaseModel *)field:(id)field;
+- (BaseModel *)limit:(NSUInteger)start size:(NSUInteger)size;
+- (BaseModel *)order:(NSString *)order;
+- (BaseModel *)group:(NSString *)group;
+- (BaseModel *)whereRaw:(NSString *)str value:(NSDictionary *)map;
+- (BaseModel *)setwhere:(NSDictionary *)map;
 - (NSArray *)select;
 - (NSUInteger)getCount;
 
@@ -58,6 +58,7 @@
 + (NSArray *)findByColumn:(NSString *)column doubleValue:(double)value;
 + (id)find:(NSUInteger)primaryKey;
 + (NSArray *)findAll;
++ (void)updateAll;
 + (void)deleteAll;
 - (BOOL)isTableExist;
 - (void)createTable;

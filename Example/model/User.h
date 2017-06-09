@@ -12,6 +12,10 @@
 
 @property (nonatomic, assign) uint64_t uid;
     
-@property (nonatomic, copy) NSString *name;    
-    
+@property (nonatomic, copy) NSString *name;
+
+@property (nonatomic, copy) NSString *nickName;
+
+@property (nonatomic, assign) NSInteger gender;
+
 @end

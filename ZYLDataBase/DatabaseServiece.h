@@ -19,8 +19,7 @@
 
 - (void)setDatabaseVersion:(NSUInteger)newVersionNumber;
 
-- (instancetype)initWithMigrations;
-
-- (instancetype)initWithMigrations:(BOOL)loggingEnabled;
+// Migration steps - v1
+- (void)createApplicationPropertiesTable;
 
 @end
