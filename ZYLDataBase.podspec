@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZYLDataBase'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'ORM机制的sqlite数据库.'
 
 # This description is used to generate tags and improve search results.
@@ -32,8 +32,10 @@ Pod::Spec.new do |s|
   s.requires_arc          = true
   s.ios.deployment_target = '8.0'
   s.compiler_flags = '-DSQLITE_HAS_CODEC'
-  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
-  s.user_target_xcconfig = { 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES' }
+  s.xcconfig = {
+                 'OTHER_CFLAGS' => '$(inherited) -DSQLITE_HAS_CODEC -DHAVE_USLEEP=1',
+                 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'
+                }
 
   s.source_files = 'ZYLDataBase/**/*.{h,m}'
   s.public_header_files = 'ZYLDataBase/Database.h','ZYLDataBase/DatabaseServiece.h','ZYLDataBase/BaseModel.h'

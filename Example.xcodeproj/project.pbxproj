@@ -26,6 +26,7 @@
 		FC4F2B361EDFCB1B0010FA26 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4F2B351EDFCB1B0010FA26 /* User.m */; };
 		FC5284A81EE7B6C300407C3A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5284A71EE7B6C300407C3A /* Security.framework */; };
 		FC5284AC1EE7C83F00407C3A /* DBServiece.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5284AB1EE7C83F00407C3A /* DBServiece.m */; };
+		FCC3F1AE1EF3A3EC00017669 /* sqlite3.h in Headers */ = {isa = PBXBuildFile; fileRef = FCC3F1AD1EF3A3C100017669 /* sqlite3.h */; settings = {ATTRIBUTES = (Private, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		FC5284A91EE7B92200407C3A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FC5284AA1EE7C83F00407C3A /* DBServiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBServiece.h; sourceTree = "<group>"; };
 		FC5284AB1EE7C83F00407C3A /* DBServiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBServiece.m; sourceTree = "<group>"; };
+		FCC3F1AD1EF3A3C100017669 /* sqlite3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 		FC4F2B231EDFC7C60010FA26 /* Sqlcipher */ = {
 			isa = PBXGroup;
 			children = (
+				FCC3F1AD1EF3A3C100017669 /* sqlite3.h */,
 				FC4F2B251EDFC7C60010FA26 /* libsqlcipher.a */,
 			);
 			path = Sqlcipher;
@@ -203,6 +206,7 @@
 				FC4F2B1F1EDFC7BA0010FA26 /* Database.h in Headers */,
 				FC4F2B1D1EDFC7BA0010FA26 /* BaseModel.h in Headers */,
 				FC4F2B211EDFC7BA0010FA26 /* DatabaseServiece.h in Headers */,
+				FCC3F1AE1EF3A3EC00017669 /* sqlite3.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +256,7 @@
 		FC4F2AE31EDFC6BF0010FA26 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "zhang yinglong";
 				TargetAttributes = {
 					FC4F2AEA1EDFC6BF0010FA26 = {
@@ -370,7 +374,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -378,7 +384,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -423,7 +433,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -431,7 +443,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
