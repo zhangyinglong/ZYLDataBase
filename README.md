@@ -1,17 +1,14 @@
-# ZYLDataBase
---
+## ZYLDataBase
 
 ZYLDataBase 是一套使用run-time实现ORM机制的sqlite数据库封装接口层。
 
-# Features
---
+## Features
 
 * 支持数据库加密
 * 使用run-time实现ORM机制
 * 支持数据库版本升级，事务化sql操作
 
-# SQLCipher
---
+## SQLCipher
 
 本框架依赖于 [SQLCipher](https://github.com/sqlcipher/sqlcipher) ，其编译方式和普通版本的[SQLite](https://www.sqlite.org/index.html)大致一样，需要注意三点：
 >1. 编译参数需定义 **SQLITE_HAS_CODEC** 和 **SQLITE_TEMP_STORE=2**；
@@ -19,8 +16,7 @@ ZYLDataBase 是一套使用run-time实现ORM机制的sqlite数据库封装接口
 >3. 为支持iPhone真机和模拟器，需要各自编译**ARMV7**和**x86_64**格式，并使用命令 **lipo** 合并成一整个静态库文件
 >`lipo -create lib1.a lib2.a -output lib3.a`
 
-# Usage
---
+## Usage
 
 1. 需要存储到 **sqlite** 数据库中的数据结果都需要继承 `BaseModel`
 
@@ -157,8 +153,7 @@ ZYLDataBase 是一套使用run-time实现ORM机制的sqlite数据库封装接口
     [DBServiece secureEntry:NO];
 	```
 
-# Installation
---
+## Installation
 
 #### CocoaPods
 1. 将 cocoapods 更新至最新版本；
@@ -171,8 +166,7 @@ ZYLDataBase 是一套使用run-time实现ORM机制的sqlite数据库封装接口
 2. 执行 `carthage update --platform ios` 并将生成的 framework 添加到你的工程；
 3. 导入 \<ZYLDataBase/ZYLDataBase.h\>。
 
-# License
---
+## License
 
 MIT License
 
