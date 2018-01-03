@@ -28,7 +28,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     // 必须在初始化数据库之前设置是否支持加密，默认开启
-    [DBServiece secureEntry:NO];
+    [DBServiece secureEntry:YES];
     
     // 初始化数据库，并自动检测升级
     DBServiece *service = [DBServiece shared];
