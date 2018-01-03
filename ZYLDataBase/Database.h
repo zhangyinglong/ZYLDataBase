@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <sqlite3.h>
 
 typedef NS_ENUM(NSInteger, TransactionKind) {
     TransactionKindDeferred,
@@ -20,9 +19,7 @@ typedef NS_ENUM(NSInteger, TransactionCompletion) {
     TransactionCompletionRollback
 };
 
-@interface Database : NSObject {
-    sqlite3 *database;
-}
+@interface Database : NSObject 
 
 @property (nonatomic, copy) NSString *pathToDatabase;
 @property (nonatomic, assign) BOOL logging;

@@ -7,10 +7,13 @@
 //
 
 #import "Database.h"
+#import <sqlite3.h>
 
 static BOOL _secureEntry_ = YES;
 
-@interface Database ()
+@interface Database () {
+    sqlite3 *database;
+}
 
 - (void)open;
 - (void)raiseSqliteException:(NSString *)errorMessage;
