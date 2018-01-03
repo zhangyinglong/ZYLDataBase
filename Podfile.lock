@@ -4,7 +4,7 @@ PODS:
   - SQLCipher/common (3.4.2)
   - SQLCipher/standard (3.4.2):
     - SQLCipher/common
-  - ZYLDataBase (0.2.2):
+  - ZYLDataBase (0.2.3):
     - SQLCipher
 
 DEPENDENCIES:
@@ -17,8 +17,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   SQLCipher: f9fcf29b2e59ced7defc2a2bdd0ebe79b40d4990
-  ZYLDataBase: e5acf9c7c38ed1f6d97723892b4415d00c964a40
+  ZYLDataBase: 875b1e6945cdade4bc9a2d439ec7d86d501047f7
 
-PODFILE CHECKSUM: 0b821e5b9f41323eb1a762bf698bfa53f072333b
+PODFILE CHECKSUM: 1ee36a4c2a0afd90a13c429200c34518a07eb106
 
 COCOAPODS: 1.4.0.rc.1
