@@ -1,0 +1,24 @@
+PODS:
+  - SQLCipher (3.4.2):
+    - SQLCipher/standard (= 3.4.2)
+  - SQLCipher/common (3.4.2)
+  - SQLCipher/standard (3.4.2):
+    - SQLCipher/common
+  - ZYLDataBase (0.2.2):
+    - SQLCipher
+
+DEPENDENCIES:
+  - SQLCipher
+  - ZYLDataBase (from `./`)
+
+EXTERNAL SOURCES:
+  ZYLDataBase:
+    :path: ./
+
+SPEC CHECKSUMS:
+  SQLCipher: f9fcf29b2e59ced7defc2a2bdd0ebe79b40d4990
+  ZYLDataBase: e5acf9c7c38ed1f6d97723892b4415d00c964a40
+
+PODFILE CHECKSUM: 0b821e5b9f41323eb1a762bf698bfa53f072333b
+
+COCOAPODS: 1.4.0.rc.1

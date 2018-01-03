@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		537B9E6349077D559EE6BCFF /* libPods-ZYLDataBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 128DC817B899DC64EA9D124A /* libPods-ZYLDataBase.a */; };
+		F5C8FDF28306F4F895E8B938 /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FEFA8A231DBC505A0CAEBC /* libPods-Example.a */; };
 		FC4F2AF01EDFC6BF0010FA26 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4F2AEF1EDFC6BF0010FA26 /* main.m */; };
 		FC4F2AF31EDFC6BF0010FA26 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4F2AF21EDFC6BF0010FA26 /* AppDelegate.m */; };
 		FC4F2AF61EDFC6BF0010FA26 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4F2AF51EDFC6BF0010FA26 /* ViewController.m */; };
@@ -22,11 +24,9 @@
 		FC4F2B201EDFC7BA0010FA26 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4F2B1A1EDFC7BA0010FA26 /* Database.m */; };
 		FC4F2B211EDFC7BA0010FA26 /* DatabaseServiece.h in Headers */ = {isa = PBXBuildFile; fileRef = FC4F2B1B1EDFC7BA0010FA26 /* DatabaseServiece.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FC4F2B221EDFC7BA0010FA26 /* DatabaseServiece.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4F2B1C1EDFC7BA0010FA26 /* DatabaseServiece.m */; };
-		FC4F2B281EDFC7C60010FA26 /* libsqlcipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC4F2B251EDFC7C60010FA26 /* libsqlcipher.a */; };
 		FC4F2B361EDFCB1B0010FA26 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4F2B351EDFCB1B0010FA26 /* User.m */; };
 		FC5284A81EE7B6C300407C3A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5284A71EE7B6C300407C3A /* Security.framework */; };
 		FC5284AC1EE7C83F00407C3A /* DBServiece.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5284AB1EE7C83F00407C3A /* DBServiece.m */; };
-		FCC3F1AE1EF3A3EC00017669 /* sqlite3.h in Headers */ = {isa = PBXBuildFile; fileRef = FCC3F1AD1EF3A3C100017669 /* sqlite3.h */; settings = {ATTRIBUTES = (Private, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +54,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		128DC817B899DC64EA9D124A /* libPods-ZYLDataBase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZYLDataBase.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F4CDB5E2CA42C9ABB175ACB /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		A7FEFA8A231DBC505A0CAEBC /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD9292688F39212F12B76DBD /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
+		D0A111F9EB0DABA270689702 /* Pods-ZYLDataBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZYLDataBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZYLDataBase/Pods-ZYLDataBase.debug.xcconfig"; sourceTree = "<group>"; };
+		DC47CE2F3EC6BB71C2E3A24F /* Pods-ZYLDataBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZYLDataBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZYLDataBase/Pods-ZYLDataBase.release.xcconfig"; sourceTree = "<group>"; };
 		FC4F2AEB1EDFC6BF0010FA26 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC4F2AEF1EDFC6BF0010FA26 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FC4F2AF11EDFC6BF0010FA26 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,15 +79,13 @@
 		FC4F2B1A1EDFC7BA0010FA26 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
 		FC4F2B1B1EDFC7BA0010FA26 /* DatabaseServiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseServiece.h; sourceTree = "<group>"; };
 		FC4F2B1C1EDFC7BA0010FA26 /* DatabaseServiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseServiece.m; sourceTree = "<group>"; };
-		FC4F2B251EDFC7C60010FA26 /* libsqlcipher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsqlcipher.a; sourceTree = "<group>"; };
-		FC4F2B2E1EDFC97E0010FA26 /* ZYLDataBase.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ZYLDataBase.podspec; sourceTree = "<group>"; };
+		FC4F2B2E1EDFC97E0010FA26 /* ZYLDataBase.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ZYLDataBase.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FC4F2B341EDFCB1B0010FA26 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		FC4F2B351EDFCB1B0010FA26 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FC5284A71EE7B6C300407C3A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		FC5284A91EE7B92200407C3A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FC5284AA1EE7C83F00407C3A /* DBServiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBServiece.h; sourceTree = "<group>"; };
 		FC5284AB1EE7C83F00407C3A /* DBServiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBServiece.m; sourceTree = "<group>"; };
-		FCC3F1AD1EF3A3C100017669 /* sqlite3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC4F2B111EDFC6F70010FA26 /* ZYLDataBase.framework in Frameworks */,
+				F5C8FDF28306F4F895E8B938 /* libPods-Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,13 +103,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC5284A81EE7B6C300407C3A /* Security.framework in Frameworks */,
-				FC4F2B281EDFC7C60010FA26 /* libsqlcipher.a in Frameworks */,
+				537B9E6349077D559EE6BCFF /* libPods-ZYLDataBase.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1689B69A79A9EB41FD7EB4FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F4CDB5E2CA42C9ABB175ACB /* Pods-Example.debug.xcconfig */,
+				AD9292688F39212F12B76DBD /* Pods-Example.release.xcconfig */,
+				D0A111F9EB0DABA270689702 /* Pods-ZYLDataBase.debug.xcconfig */,
+				DC47CE2F3EC6BB71C2E3A24F /* Pods-ZYLDataBase.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FC4F2AE21EDFC6BF0010FA26 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +130,7 @@
 				FC4F2B0B1EDFC6F70010FA26 /* ZYLDataBase */,
 				FC4F2AEC1EDFC6BF0010FA26 /* Products */,
 				FC5284A61EE7B6C300407C3A /* Frameworks */,
+				1689B69A79A9EB41FD7EB4FA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,7 +171,6 @@
 		FC4F2B0B1EDFC6F70010FA26 /* ZYLDataBase */ = {
 			isa = PBXGroup;
 			children = (
-				FC4F2B231EDFC7C60010FA26 /* Sqlcipher */,
 				FC4F2B0C1EDFC6F70010FA26 /* ZYLDataBase.h */,
 				FC4F2B171EDFC7BA0010FA26 /* BaseModel.h */,
 				FC4F2B181EDFC7BA0010FA26 /* BaseModel.m */,
@@ -165,15 +181,6 @@
 				FC4F2B0D1EDFC6F70010FA26 /* Info.plist */,
 			);
 			path = ZYLDataBase;
-			sourceTree = "<group>";
-		};
-		FC4F2B231EDFC7C60010FA26 /* Sqlcipher */ = {
-			isa = PBXGroup;
-			children = (
-				FCC3F1AD1EF3A3C100017669 /* sqlite3.h */,
-				FC4F2B251EDFC7C60010FA26 /* libsqlcipher.a */,
-			);
-			path = Sqlcipher;
 			sourceTree = "<group>";
 		};
 		FC4F2B331EDFCB1B0010FA26 /* model */ = {
@@ -191,6 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				FC5284A71EE7B6C300407C3A /* Security.framework */,
+				A7FEFA8A231DBC505A0CAEBC /* libPods-Example.a */,
+				128DC817B899DC64EA9D124A /* libPods-ZYLDataBase.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -206,7 +215,6 @@
 				FC4F2B1F1EDFC7BA0010FA26 /* Database.h in Headers */,
 				FC4F2B1D1EDFC7BA0010FA26 /* BaseModel.h in Headers */,
 				FC4F2B211EDFC7BA0010FA26 /* DatabaseServiece.h in Headers */,
-				FCC3F1AE1EF3A3EC00017669 /* sqlite3.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,10 +225,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC4F2B021EDFC6BF0010FA26 /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
+				4AE7ADBF21223797B0788BE0 /* [CP] Check Pods Manifest.lock */,
 				FC4F2AE71EDFC6BF0010FA26 /* Sources */,
 				FC4F2AE81EDFC6BF0010FA26 /* Frameworks */,
 				FC4F2AE91EDFC6BF0010FA26 /* Resources */,
 				FC4F2B161EDFC6F70010FA26 /* Embed Frameworks */,
+				8F6C7DAB771BD1C8BC4880DC /* [CP] Embed Pods Frameworks */,
+				8601D0417D534323EA58864E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,10 +247,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC4F2B131EDFC6F70010FA26 /* Build configuration list for PBXNativeTarget "ZYLDataBase" */;
 			buildPhases = (
+				6380EB837BFF2CD384D412F7 /* [CP] Check Pods Manifest.lock */,
 				FC4F2B051EDFC6F70010FA26 /* Sources */,
 				FC4F2B061EDFC6F70010FA26 /* Frameworks */,
 				FC4F2B071EDFC6F70010FA26 /* Headers */,
 				FC4F2B081EDFC6F70010FA26 /* Resources */,
+				634158A35D4480D9714935ED /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -309,6 +322,90 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4AE7ADBF21223797B0788BE0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		634158A35D4480D9714935ED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZYLDataBase/Pods-ZYLDataBase-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6380EB837BFF2CD384D412F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZYLDataBase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8601D0417D534323EA58864E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F6C7DAB771BD1C8BC4880DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FC4F2AE71EDFC6BF0010FA26 /* Sources */ = {
@@ -477,6 +574,7 @@
 		};
 		FC4F2B031EDFC6BF0010FA26 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F4CDB5E2CA42C9ABB175ACB /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 57NQC2SA65;
@@ -489,6 +587,7 @@
 		};
 		FC4F2B041EDFC6BF0010FA26 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD9292688F39212F12B76DBD /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 57NQC2SA65;
@@ -501,6 +600,7 @@
 		};
 		FC4F2B141EDFC6F70010FA26 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0A111F9EB0DABA270689702 /* Pods-ZYLDataBase.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -512,10 +612,6 @@
 				INFOPLIST_FILE = ZYLDataBase/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/ZYLDataBase/Sqlcipher",
-				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "Future-Entertainment-Co.Ltd..ZYLDataBase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -527,6 +623,7 @@
 		};
 		FC4F2B151EDFC6F70010FA26 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC47CE2F3EC6BB71C2E3A24F /* Pods-ZYLDataBase.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -538,10 +635,6 @@
 				INFOPLIST_FILE = ZYLDataBase/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/ZYLDataBase/Sqlcipher",
-				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "Future-Entertainment-Co.Ltd..ZYLDataBase";
 				PRODUCT_NAME = "$(TARGET_NAME)";

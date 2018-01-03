@@ -41,9 +41,9 @@ Pod::Spec.new do |s|
 
   s.source_files = 'ZYLDataBase/**/*.{h,m}'
   s.public_header_files = 'ZYLDataBase/Database.h','ZYLDataBase/DatabaseServiece.h','ZYLDataBase/BaseModel.h'
-  s.vendored_libraries = 'ZYLDataBase/**/*.a'
+  # s.vendored_libraries = 'ZYLDataBase/**/*.a'
   s.libraries = 'z', 'sqlite3'
 
   s.frameworks = 'Security'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'SQLCipher'
 end
