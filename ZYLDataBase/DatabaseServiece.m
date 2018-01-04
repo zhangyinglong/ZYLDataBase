@@ -3,7 +3,7 @@
 //  DistributTools
 //
 //  Created by zhangyinglong on 16/1/16.
-//  Copyright © 2016年 ChinaHR. All rights reserved.
+//  Copyright © 2016年 zhangyinglong. All rights reserved.
 //
 
 #import "DatabaseServiece.h"
